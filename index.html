@@ -51,8 +51,8 @@
 
     function getRandomPosition() {
         const padding = 80;
-        const heartDisplayWidth = 13 * 4;
-        const heartDisplayHeight = 11 * 4;
+        const heartDisplayWidth = 13 * 8;
+        const heartDisplayHeight = 11 * 8;
         const x = Math.random() * (window.innerWidth - padding - heartDisplayWidth);
         const y = Math.random() * (window.innerHeight - padding - heartDisplayHeight);
         return { x, y };
@@ -85,8 +85,8 @@
         bird.style.left = `${birdStartX}px`;
         bird.style.top = `${birdStartY}px`;
 
-        const birdWidth = 32 * 4;
-        const birdHeight = 24 * 4;
+        const birdWidth = 32 * 8;
+        const birdHeight = 24 * 8;
 
         const isFlyingRight = heartX > birdStartX;
         const scaleX = isFlyingRight ? -4 : 4;
@@ -97,7 +97,7 @@
         let posX = birdStartX;
         let posY = birdStartY;
 
-        const speed = 6;
+        const speed = 10;
 
         const heartCenterX = heartX + 13 * 2;
         const heartCenterY = heartY + 11 * 2;
@@ -144,7 +144,7 @@
             const deltaX = flyAwayX - posX;
             const deltaY = flyAwayY - posY;
             const totalDistance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-            const duration = 2000;
+            const duration = 1000;
             const frames = duration / 16;
             const stepX = deltaX / frames;
             const stepY = deltaY / frames;
